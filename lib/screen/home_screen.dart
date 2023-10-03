@@ -50,16 +50,19 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
 
       // Floating button for add some task
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: const Color.fromRGBO(255, 255, 255, 0.815),
-        elevation: 3,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-        ),
-        child: const Icon(
-          Icons.add,
-          color: Colors.black,
+      floatingActionButton: Transform.scale(
+        scale: 0.8,
+        child: FloatingActionButton(
+          onPressed: () {},
+          backgroundColor: const Color.fromRGBO(255, 255, 255, 0.815),
+          elevation: 3,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: const Icon(
+            Icons.add,
+            color: Colors.black,
+          ),
         ),
       ),
 
