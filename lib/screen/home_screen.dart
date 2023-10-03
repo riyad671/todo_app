@@ -30,6 +30,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(191, 232, 255, 1),
+
+      // App bar
       appBar: AppBar(
         title: const Text('To Do'),
         centerTitle: true,
@@ -46,6 +48,22 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         elevation: 0.9,
       ),
+
+      // Floating button for add some task
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: const Color.fromRGBO(255, 255, 255, 0.815),
+        elevation: 3,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15),
+        ),
+        child: const Icon(
+          Icons.add,
+          color: Colors.black,
+        ),
+      ),
+
+      //Build function
       body: ListView.builder(
         itemCount: toDoList.length,
         itemBuilder: (context, index) {
