@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class MyButton extends StatelessWidget {
   MyButton({
     super.key,
-    required this.onPressed,
     required this.text,
+    required this.onPressed,
   });
 
   final String text;
@@ -15,10 +15,10 @@ class MyButton extends StatelessWidget {
     return MaterialButton(
       onPressed: onPressed,
       color: Theme.of(context).primaryColor,
-      child: Text(text),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
+      child: Text(text),
     );
   }
 }

@@ -13,20 +13,26 @@ class _HomeScreenState extends State<HomeScreen> {
   final _controller = TextEditingController();
   // List of To-Do task
   List toDoList = [
-    [
-      "Finish To-Do App",
-      false,
-    ],
-    [
-      "Compile quiz app",
-      false,
-    ],
+    ['Finish To-Do App', false],
+    ['Compile quiz app', true],
   ];
   // Checkbox was taped
   void checkBoxChanged(bool? value, int index) {
     setState(() {
       toDoList[index][1] = !toDoList[index][1];
     });
+  }
+
+  // Save new task
+  void saveNewTask() {
+    setState(() {
+      toDoList.add([
+        _controller.text,
+        false,
+      ]);
+      _controller.clear();
+    });
+    Navigator.of(context).pop();
   }
 
   // Create new task
@@ -36,6 +42,8 @@ class _HomeScreenState extends State<HomeScreen> {
       builder: (context) {
         return DialogBox(
           controller: _controller,
+          onSave: saveNewTask,
+          onCancel: () => Navigator.of(context).pop(),
         );
       },
     );
