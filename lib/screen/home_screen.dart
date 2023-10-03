@@ -14,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
   // List of To-Do task
   List toDoList = [
     ['Finish To-Do App', false],
-    ['Compile quiz app', true],
+    ['Compile quiz app', false],
   ];
   // Checkbox was taped
   void checkBoxChanged(bool? value, int index) {
