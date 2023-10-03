@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/utility/todo_tile.dart';
+import 'package:todo_app/utility/dialog_box.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -8,6 +9,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  // Text controller
+  final _controller = TextEditingController();
   // List of To-Do task
   List toDoList = [
     [
@@ -24,6 +27,18 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       toDoList[index][1] = !toDoList[index][1];
     });
+  }
+
+  // Create new task
+  void createNewTask() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return DialogBox(
+          controller: _controller,
+        );
+      },
+    );
   }
 
   @override
@@ -53,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButton: Transform.scale(
         scale: 0.8,
         child: FloatingActionButton(
-          onPressed: () {},
+          onPressed: createNewTask,
           backgroundColor: const Color.fromRGBO(255, 255, 255, 0.815),
           elevation: 3,
           shape: RoundedRectangleBorder(

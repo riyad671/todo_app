@@ -7,7 +7,7 @@ void main() {
       debugShowCheckedModeBanner: false,
       home: const HomeScreen(),
       theme: ThemeData(
-        primaryColor: const Color.fromRGBO(125, 186, 255, 1),
+        primaryColor: const Color.fromRGBO(154, 201, 255, 1),
       ),
     ),
   );
