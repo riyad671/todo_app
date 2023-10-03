@@ -35,6 +35,13 @@ class _HomeScreenState extends State<HomeScreen> {
     Navigator.of(context).pop();
   }
 
+  // Delete task
+  void deleteTask(int index) {
+    setState(() {
+      toDoList.removeAt(index);
+    });
+  }
+
   // Create new task
   void createNewTask() {
     showDialog(
@@ -97,6 +104,10 @@ class _HomeScreenState extends State<HomeScreen> {
             taskName: toDoList[index][0],
             taskCompleted: toDoList[index][1],
             onChanged: (value) => checkBoxChanged(value, index),
+            // deleteFunction: (context) => deleteTask,
+            deleteFunction: (p0) {
+              deleteTask(index);
+            },
           );
         },
       ),
